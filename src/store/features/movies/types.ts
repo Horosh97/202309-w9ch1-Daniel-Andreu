@@ -1,10 +1,10 @@
-export interface movieStructure {
+export interface MovieStructure {
   id: number;
   title: string;
   director: string;
   image: string;
 }
 
-export interface moviesStateStructure {
-  movies: movieStructure[];
+export interface MoviesStateStructure {
+  movies: MovieStructure[];
 }
