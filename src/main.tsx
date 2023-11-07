@@ -5,7 +5,6 @@ import { Provider } from "react-redux";
 import { store } from "./store";
 import { BrowserRouter } from "react-router-dom";
 import "@fontsource/rubik";
-
 import { ThemeProvider } from "styled-components";
 import { mainTheme } from "./styles/mainTheme";
 import GlobalStyle from "./styles/GlobalStyle";
