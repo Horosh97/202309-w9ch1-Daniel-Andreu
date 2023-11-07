@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 import { MovieStructure } from "../store/features/movies/types";
 
-const apiUrl = "https://api-movies-pt6h.onrender.com/items";
+const apiUrl = import.meta.env.VITE_API_URL;
 
 const useMoviesApi = () => {
   const getMovies = useCallback(async () => {
