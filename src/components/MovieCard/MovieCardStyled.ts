@@ -13,10 +13,14 @@ const MovieCardStyled = styled.article`
     &__image {
       border-radius: ${({ theme }) => theme.borderRadius};
       border: 5px solid #f00;
+      width: 100%;
+      height: auto;
+      max-width: fit-content;
     }
 
     &__title {
       font-size: 1.8rem;
+      color: #fff;
     }
 
     &__director {
