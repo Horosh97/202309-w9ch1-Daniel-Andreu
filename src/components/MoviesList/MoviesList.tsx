@@ -1,4 +1,5 @@
 import { useAppSelector } from "../../store/hooks";
+import MovieCard from "../MovieCard/MovieCard";
 
 const MoviesList = (): React.ReactElement => {
   const movies = useAppSelector((state) => {
@@ -9,7 +10,7 @@ const MoviesList = (): React.ReactElement => {
     <ul>
       {movies.map((movie) => (
         <li key={movie.id}>
-          <div />
+          <MovieCard movie={movie} />
         </li>
       ))}
     </ul>
