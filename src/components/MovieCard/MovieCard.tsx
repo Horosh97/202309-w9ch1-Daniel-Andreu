@@ -9,10 +9,16 @@ const MovieCard = ({
   movie: { title, image, director },
 }: MovieCardProps): React.ReactElement => {
   return (
-    <MovieCardStyled>
-      <img src={image} alt={title} />
-      <h2>{title}</h2>
-      <span>{director}</span>
+    <MovieCardStyled className="movie-container">
+      <img
+        className="movie-container__image"
+        src={image}
+        alt={title}
+        width={380}
+        height={500}
+      />
+      <h2 className="movie-container__title">{title}</h2>
+      <span className="movie-container__director">{director}</span>
     </MovieCardStyled>
   );
 };
