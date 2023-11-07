@@ -16,9 +16,12 @@ const HomePage = (): React.ReactElement => {
   }, [dispatch, getMovies]);
 
   return (
-    <main>
-      <MoviesList />
-    </main>
+    <>
+      <h1>Top 8 Horror Films</h1>
+      <main>
+        <MoviesList />
+      </main>
+    </>
   );
 };
 export default HomePage;
