@@ -6,6 +6,11 @@ const mainTheme: DefaultTheme = {
     fontFamily: "Rubik",
     sansSerif: "DM Sans , sans-serif",
   },
+  colors: {
+    mainColor: "#fff",
+    secondaryColor: "#f00",
+    backgroundColor: "#22093b",
+  },
 };
 
 export { mainTheme };

@@ -20,12 +20,12 @@ const MovieCardStyled = styled.article`
 
     &__title {
       font-size: 1.8rem;
-      color: #fff;
+      color: ${({ theme }) => theme.colors.mainColor};
     }
 
     &__director {
       font-size: 1.2rem;
-      color: #f00;
+      color: ${({ theme }) => theme.colors.secondaryColor};
     }
   }
 `;
