@@ -1,8 +1,8 @@
 import { useEffect } from "react";
-import MoviesList from "../components/MoviesList/MoviesList";
-import { useAppDispatch } from "../store/hooks";
-import useMoviesApi from "../hooks/useMoviesApi";
-import { loadMoviesActionCreator } from "../store/features/movies/moviesSlice";
+import MoviesList from "../../components/MoviesList/MoviesList";
+import { useAppDispatch } from "../../store/hooks";
+import useMoviesApi from "../../hooks/useMoviesApi";
+import { loadMoviesActionCreator } from "../../store/features/movies/moviesSlice";
 import HomePageStyled from "./HomePageStyled";
 
 const HomePage = (): React.ReactElement => {
