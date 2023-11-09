@@ -14,7 +14,7 @@ const moviesSlice = createSlice({
       action: PayloadAction<MovieStructure[]>,
     ): MoviesStateStructure => ({ ...currentState, movies: action.payload }),
 
-    toggleWatchedMovies: (
+    toggleWatchedMovie: (
       currentState: MoviesStateStructure,
       action: PayloadAction<number>,
     ): MoviesStateStructure => ({
@@ -30,7 +30,7 @@ const moviesSlice = createSlice({
 
 export const {
   loadMovies: loadMoviesActionCreator,
-  toggleWatchedMovies: toggleWatchedMoviesActionCreator,
+  toggleWatchedMovie: toggleWatchedMovieActionCreator,
 } = moviesSlice.actions;
 
 export const moviesReducer = moviesSlice.reducer;
