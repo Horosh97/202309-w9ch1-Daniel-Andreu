@@ -11,8 +11,30 @@ const useMoviesApi = () => {
     return movies;
   }, []);
 
+  const setWatchedMovies = useCallback(
+    async (movieId: number, isWatched: boolean): Promise<void> => {
+      try {
+        const response = await fetch(`${apiUrl}/${movieId}`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ isWatched: !isWatched }),
+        });
+
+        if (!response.ok) {
+          throw new Error();
+        }
+      } catch {
+        throw new Error();
+      }
+    },
+    [],
+  );
+
   return {
     getMovies,
+    setWatchedMovies,
   };
 };
 
