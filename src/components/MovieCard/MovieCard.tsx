@@ -3,7 +3,7 @@ import useMoviesApi from "../../hooks/useMoviesApi";
 import { MovieStructure } from "../../store/features/movies/types";
 import Button from "../Button/Button";
 import MovieCardStyled from "./MovieCardStyled";
-import { toggleWatchedMoviesActionCreator } from "../../store/features/movies/moviesSlice";
+import { toggleWatchedMovieActionCreator } from "../../store/features/movies/moviesSlice";
 
 interface MovieCardProps {
   movie: MovieStructure;
@@ -16,7 +16,7 @@ const MovieCard = ({
   const dispatch = useDispatch();
 
   const toggleCardIsWatched = async (id: number): Promise<void> => {
-    dispatch(toggleWatchedMoviesActionCreator(id));
+    dispatch(toggleWatchedMovieActionCreator(id));
     await setWatchedMovies(id, isWatched);
   };
   return (
