@@ -1,3 +1,5 @@
+import ButtonStyled from "./ButtonStyled";
+
 interface ButtonProps {
   actionOnClick?: () => void;
   title: string;
@@ -10,7 +12,7 @@ const Button = ({
   actionOnClick,
 }: ButtonProps): React.ReactElement => {
   return (
-    <button
+    <ButtonStyled
       type={"button"}
       onClick={actionOnClick}
       title={title}
