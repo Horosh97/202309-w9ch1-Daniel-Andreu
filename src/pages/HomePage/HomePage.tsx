@@ -21,10 +21,13 @@ const HomePage = (): React.ReactElement => {
 
   return (
     <HomePageStyled className="home-page">
-      <h1 className="home-page__title">Top 8 Horror Films</h1>
+      <h1 className="home-page__title">Horror Films</h1>
+      <h2 className="home-page__subtitle">
+        The best horrorific movies of all time
+      </h2>
       <Button
         className="home-page__button"
-        text="Add Movie"
+        text="Add a new movie"
         type="button"
         actionOnClick={() => navigate("/new")}
       />
