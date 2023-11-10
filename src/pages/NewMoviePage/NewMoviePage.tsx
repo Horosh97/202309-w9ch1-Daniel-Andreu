@@ -34,7 +34,7 @@ const NewMoviePage = (): React.ReactElement => {
         type="button"
         actionOnClick={() => navigate("/films")}
       />
-      <main>
+      <main className="new-page__main">
         <MovieForm actionOnSubmit={addMovieOnSubmit} />
       </main>
     </NewMoviePageStyled>
