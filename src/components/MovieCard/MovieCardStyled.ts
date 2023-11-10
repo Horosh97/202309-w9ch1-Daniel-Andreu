@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const MovieCardStyled = styled.article`
   display: flex;
-  padding: 20px;
+  padding: 20px 0;
   flex-direction: column;
   justify-content: center;
   align-items: center;

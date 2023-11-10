@@ -3,11 +3,23 @@ import ButtonStyled from "./ButtonStyled";
 interface ButtonProps {
   actionOnClick?: () => void;
   text: string;
+  type: "button" | "submit";
+  className?: string;
 }
 
-const Button = ({ text, actionOnClick }: ButtonProps): React.ReactElement => {
+const Button = ({
+  type,
+  text,
+  className,
+  actionOnClick,
+}: ButtonProps): React.ReactElement => {
   return (
-    <ButtonStyled type={"button"} onClick={actionOnClick} children={text} />
+    <ButtonStyled
+      className={className}
+      type={type}
+      onClick={actionOnClick}
+      children={text}
+    />
   );
 };
 
