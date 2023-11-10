@@ -4,10 +4,13 @@ import { useAppDispatch } from "../../store/hooks";
 import useMoviesApi from "../../hooks/useMoviesApi";
 import { loadMoviesActionCreator } from "../../store/features/movies/moviesSlice";
 import HomePageStyled from "./HomePageStyled";
+import { useNavigate } from "react-router-dom";
+import Button from "../../components/Button/Button";
 
 const HomePage = (): React.ReactElement => {
   const dispatch = useAppDispatch();
   const { getMovies } = useMoviesApi();
+  const navigate = useNavigate();
 
   useEffect(() => {
     (async () => {
@@ -19,6 +22,12 @@ const HomePage = (): React.ReactElement => {
   return (
     <HomePageStyled className="home-page">
       <h1 className="home-page__title">Top 8 Horror Films</h1>
+      <Button
+        className="home-page__button"
+        text="Add Movie"
+        type="button"
+        actionOnClick={() => navigate("/new")}
+      />
       <main>
         <MoviesList />
       </main>

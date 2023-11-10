@@ -5,6 +5,7 @@ const NewMoviePageStyled = styled.div`
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
+  padding: 0 16px;
   background-color: ${({ theme }) => theme.colors.backgroundColor};
   .new-page {
     &__title {
@@ -12,6 +13,10 @@ const NewMoviePageStyled = styled.div`
       color: ${({ theme }) => theme.colors.mainColor};
       font-size: 2.4rem;
       text-align: center;
+    }
+
+    &__button {
+      padding: 20px;
     }
   }
 `;

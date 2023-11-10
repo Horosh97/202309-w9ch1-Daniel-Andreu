@@ -5,6 +5,7 @@ import { MovieStructure } from "../../store/features/movies/types";
 import { addMovieActionCreator } from "../../store/features/movies/moviesSlice";
 import { useNavigate } from "react-router-dom";
 import useMoviesApi from "../../hooks/useMoviesApi";
+import Button from "../../components/Button/Button";
 
 const NewMoviePage = (): React.ReactElement => {
   const navigate = useNavigate();
@@ -24,6 +25,12 @@ const NewMoviePage = (): React.ReactElement => {
   return (
     <NewMoviePageStyled className="new-page">
       <h1 className="new-page__title">Add an horrorific film:</h1>
+      <Button
+        className="new-page__button"
+        text="Return to Films"
+        type="button"
+        actionOnClick={() => navigate("/films")}
+      />
       <main>
         <MovieForm actionOnSubmit={addMovieOnSubmit} />
       </main>
