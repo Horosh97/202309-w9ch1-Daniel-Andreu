@@ -8,8 +8,8 @@ const mainTheme: DefaultTheme = {
   },
   colors: {
     mainColor: "#fff",
-    secondaryColor: "#f00",
-    backgroundColor: "#22093b",
+    secondaryColor: "#FF3A46",
+    backgroundColor: "#191824",
   },
 };
 
