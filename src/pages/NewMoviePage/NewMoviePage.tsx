@@ -1,7 +1,10 @@
 import { useDispatch } from "react-redux";
 import MovieForm from "../../components/MovieForm/MovieForm";
 import NewMoviePageStyled from "./NewMoviePageStyled";
-import { MovieStructure } from "../../store/features/movies/types";
+import {
+  MovieStructure,
+  MovieStructureWithoutId,
+} from "../../store/features/movies/types";
 import { addMovieActionCreator } from "../../store/features/movies/moviesSlice";
 import { useNavigate } from "react-router-dom";
 import useMoviesApi from "../../hooks/useMoviesApi";
@@ -12,7 +15,7 @@ const NewMoviePage = (): React.ReactElement => {
   const dispatch = useDispatch();
   const { addNewMovie } = useMoviesApi();
 
-  const addMovieOnSubmit = async (newMovie: MovieStructure) => {
+  const addMovieOnSubmit = async (newMovie: MovieStructureWithoutId) => {
     try {
       const returnedMovieFromApi: MovieStructure = await addNewMovie(newMovie);
       dispatch(addMovieActionCreator(returnedMovieFromApi));
