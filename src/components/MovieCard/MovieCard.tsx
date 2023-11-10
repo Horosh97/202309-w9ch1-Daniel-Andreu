@@ -30,11 +30,15 @@ const MovieCard = ({
       />
       <h2 className="movie-container__title">{title}</h2>
       <span className="movie-container__director">{director}</span>
+      <span className="movie-container__question">
+        Have you watched this film?
+      </span>
       <Button
         type="button"
         actionOnClick={() => {
           toggleCardIsWatched(id);
         }}
+        className={`${isWatched ? "watched-class" : ""}`}
         text={`${isWatched ? "watched" : "unwatched"}`}
       />
     </MovieCardStyled>

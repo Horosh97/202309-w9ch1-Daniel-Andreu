@@ -12,7 +12,7 @@ const MovieCardStyled = styled.article`
   .movie-container {
     &__image {
       border-radius: ${({ theme }) => theme.borderRadius};
-      border: 5px solid #f00;
+      border: 7px solid ${({ theme }) => theme.colors.secondaryColor};
       width: 100%;
       height: auto;
       aspect-ratio: 2/3;
@@ -29,6 +29,12 @@ const MovieCardStyled = styled.article`
     &__director {
       font-size: 1.2rem;
       color: ${({ theme }) => theme.colors.secondaryColor};
+    }
+
+    &__question {
+      padding-top: 16px;
+      font-size: 1rem;
+      color: ${({ theme }) => theme.colors.mainColor};
     }
   }
 `;
