@@ -31,6 +31,7 @@ const MovieCard = ({
       <h2 className="movie-container__title">{title}</h2>
       <span className="movie-container__director">{director}</span>
       <Button
+        type="button"
         actionOnClick={() => {
           toggleCardIsWatched(id);
         }}

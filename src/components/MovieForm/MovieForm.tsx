@@ -29,9 +29,9 @@ const MovieForm = ({ actionOnSubmit }: MovieFormProps): React.ReactElement => {
     event.preventDefault();
 
     actionOnSubmit(newMovie);
-
-    setNewMovie(initialNewMovie);
   };
+
+  const { title, director, image } = newMovie;
 
   return (
     <MovieFormStyled
@@ -48,6 +48,7 @@ const MovieForm = ({ actionOnSubmit }: MovieFormProps): React.ReactElement => {
           className="movie-form__input"
           required
           type="text"
+          value={title}
           onChange={onChangeData}
         />
       </div>
@@ -60,22 +61,24 @@ const MovieForm = ({ actionOnSubmit }: MovieFormProps): React.ReactElement => {
           className="movie-form__input"
           required
           type="text"
+          value={director}
           onChange={onChangeData}
         />
       </div>
       <div className="movie-form__block">
-        <label className="movie-form__label" htmlFor="imgUrl">
+        <label className="movie-form__label" htmlFor="image">
           Image URL:
         </label>
         <input
-          id="imgUrl"
+          id="image"
           className="movie-form__input"
           required
           type="text"
+          value={image}
           onChange={onChangeData}
         />
       </div>
-      <Button text="Add Movie" />
+      <Button text="Add Movie" type="submit" />
     </MovieFormStyled>
   );
 };
