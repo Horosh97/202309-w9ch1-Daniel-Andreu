@@ -15,7 +15,10 @@ const MovieCardStyled = styled.article`
       border: 5px solid #f00;
       width: 100%;
       height: auto;
-      max-width: fit-content;
+      aspect-ratio: 2/3;
+      object-fit: cover;
+      max-width: 400px;
+      min-height: auto;
     }
 
     &__title {

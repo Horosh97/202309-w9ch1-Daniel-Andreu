@@ -16,7 +16,8 @@ const NewMoviePageStyled = styled.div`
     }
 
     &__button {
-      padding: 20px;
+      margin: 16px 20px;
+      padding: 16px;
     }
   }
 `;
