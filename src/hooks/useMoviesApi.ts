@@ -32,9 +32,35 @@ const useMoviesApi = () => {
     [],
   );
 
+  const addNewMovie = async (
+    movie: MovieStructure,
+  ): Promise<MovieStructure> => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { id, ...movieWithoutId } = movie;
+    try {
+      const response = await fetch(apiUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(movieWithoutId),
+      });
+      if (!response.ok) {
+        throw new Error();
+      }
+      const returnedMovieFromApi = (await response.json()) as MovieStructure;
+      return returnedMovieFromApi;
+    } catch (error) {
+      console.log((error as Error).message);
+      const returnedMovieFromApi = {} as MovieStructure;
+      return returnedMovieFromApi;
+    }
+  };
+
   return {
     getMovies,
     setWatchedMovies,
+    addNewMovie,
   };
 };
 
