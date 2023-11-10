@@ -10,10 +10,9 @@ const moviesSlice = createSlice({
   initialState: initialMoviesState,
   reducers: {
     loadMovies: (
-      currentState,
+      currentState: MoviesStateStructure,
       action: PayloadAction<MovieStructure[]>,
     ): MoviesStateStructure => ({ ...currentState, movies: action.payload }),
-
     toggleWatchedMovie: (
       currentState: MoviesStateStructure,
       action: PayloadAction<number>,
@@ -25,12 +24,20 @@ const moviesSlice = createSlice({
           movie.id === action.payload ? !movie.isWatched : movie.isWatched,
       })),
     }),
+    addMovie: (
+      currentState: MoviesStateStructure,
+      action: PayloadAction<MovieStructure>,
+    ): MoviesStateStructure => ({
+      ...currentState,
+      movies: [...currentState.movies, action.payload],
+    }),
   },
 });
 
 export const {
   loadMovies: loadMoviesActionCreator,
   toggleWatchedMovie: toggleWatchedMovieActionCreator,
+  addMovie: addMovieActionCreator,
 } = moviesSlice.actions;
 
 export const moviesReducer = moviesSlice.reducer;
