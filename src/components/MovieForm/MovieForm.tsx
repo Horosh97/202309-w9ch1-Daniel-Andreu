@@ -1,15 +1,14 @@
 import { useState } from "react";
-import { MovieStructure } from "../../store/features/movies/types";
+import { MovieStructureWithoutId } from "../../store/features/movies/types";
 import Button from "../Button/Button";
 import MovieFormStyled from "./MovieFormStyled";
 
 interface MovieFormProps {
-  actionOnSubmit: (movie: MovieStructure) => void;
+  actionOnSubmit: (movie: MovieStructureWithoutId) => void;
 }
 
 const MovieForm = ({ actionOnSubmit }: MovieFormProps): React.ReactElement => {
-  const initialNewMovie: MovieStructure = {
-    id: 0,
+  const initialNewMovie: MovieStructureWithoutId = {
     title: "",
     director: "",
     image: "",
@@ -19,7 +18,7 @@ const MovieForm = ({ actionOnSubmit }: MovieFormProps): React.ReactElement => {
   const [newMovie, setNewMovie] = useState(initialNewMovie);
 
   const onChangeData = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setNewMovie((newMovie: MovieStructure) => ({
+    setNewMovie((newMovie: MovieStructureWithoutId) => ({
       ...newMovie,
       [event.target.id]: event.target.value,
     }));

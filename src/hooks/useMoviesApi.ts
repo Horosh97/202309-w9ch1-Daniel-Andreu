@@ -1,5 +1,8 @@
 import { useCallback } from "react";
-import { MovieStructure } from "../store/features/movies/types";
+import {
+  MovieStructure,
+  MovieStructureWithoutId,
+} from "../store/features/movies/types";
 
 const apiUrl = import.meta.env.VITE_API_URL;
 
@@ -33,17 +36,15 @@ const useMoviesApi = () => {
   );
 
   const addNewMovie = async (
-    movie: MovieStructure,
+    movie: MovieStructureWithoutId,
   ): Promise<MovieStructure> => {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { id, ...movieWithoutId } = movie;
     try {
       const response = await fetch(apiUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(movieWithoutId),
+        body: JSON.stringify(movie),
       });
       if (!response.ok) {
         throw new Error();
