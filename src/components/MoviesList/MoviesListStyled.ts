@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 const MoviesListStyled = styled.ul`
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-content: center;
   flex-wrap: wrap;
   gap: 40px;
 `;
